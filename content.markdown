@@ -25,10 +25,11 @@ title: 內容
                 stmt = db.prepare("SELECT * FROM content where `Volumes` = " + Volumes + " and `Articles` = " + Articles + " order by Volumes, Articles");
                 stmt.step();
                 const result = stmt.getAsObject();
+                document.getElementById('card_title').innerHTML = result['Name'];
                 if(type == 0)
-                    document.getElementById('contentarea').innerHTML = result['Original'];
+                    document.getElementById('card_text').innerHTML = result['Original'];
                 else
-                    document.getElementById('contentarea').innerHTML = result['Translated'];
+                    document.getElementById('card_text').innerHTML = result['Translated'];
                 document.getElementById('btn_original').addEventListener('click', function(){
                     change(0, result['Volumes'], result['Articles']);
                 });
@@ -64,7 +65,14 @@ title: 內容
                     <button class="btn btn-outline-primary" id="btn_translated">白話文</button>
                 </div>
             </div>
-            <div class="row bg-secondary" id="contentarea"></div>
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" id="card_title"></h5>
+                        <p class="card-text" id="card_text"></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
