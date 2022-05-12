@@ -19,7 +19,10 @@ title: 內容
 </script>
 <div class="container">
     <div class="row">
-        <div class="col-4" id="menu"></div>
+        <div class="col-4">
+            <nav class="nav flex-column" id="menu">
+            </nav>
+        </div>
         <script>
             function change(Volumes, Articles){
                 stmt = db.prepare("SELECT * FROM content where `Volumes` = " + Volumes + " and `Articles` = " + Articles + " order by Volumes, Articles");
@@ -44,8 +47,9 @@ title: 內容
                     var select = document.getElementById('menu');
                     var stmt = db.prepare("SELECT * FROM content order by Volumes, Articles");
                     while (stmt.step()) {
-                        var opt = document.createElement('p');
+                        var opt = document.createElement('a');
                         const result = stmt.getAsObject();
+                        opt.classList.add('nav-link');
                         opt.innerHTML = "第" + result['Volumes'] + "章 - 第" + result['Articles'] + "篇 - " + result['Name'];
                         opt.addEventListener('click', function(){
                             change(result['Volumes'], result['Articles']);
