@@ -21,21 +21,23 @@ title: 內容
     <div class="row">
         <div class="col-4" id="menu"></div>
         <script>
-            function change(type, Volumes, Articles){
+            function change(Volumes, Articles){
                 stmt = db.prepare("SELECT * FROM content where `Volumes` = " + Volumes + " and `Articles` = " + Articles + " order by Volumes, Articles");
                 stmt.step();
                 const result = stmt.getAsObject();
                 document.getElementById('card_title').innerHTML = result['Name'];
-                if(type == 0)
-                    document.getElementById('card_text').innerHTML = result['Original'];
-                else
-                    document.getElementById('card_text').innerHTML = result['Translated'];
-                document.getElementById('btn_original').addEventListener('click', function(){
-                    change(0, result['Volumes'], result['Articles']);
-                });
-                document.getElementById('btn_translated').addEventListener('click', function(){
-                    change(1, result['Volumes'], result['Articles']);
-                });
+                document.getElementById('card_text_original').innerHTML = result['Original'];
+                document.getElementById('card_text_translated').innerHTML = result['Translated'];
+            }
+            function show(type) {
+                if(type == 0) {
+                    document.getElementById('card_text_original').style.display = "block";
+                    document.getElementById('card_text_translated').style.display = "none";
+                }
+                else {
+                    document.getElementById('card_text_original').style.display = "none";
+                    document.getElementById('card_text_translated').style.display = "block";
+                }
             }
             init().then(
                 function (value) {
@@ -46,7 +48,7 @@ title: 內容
                         const result = stmt.getAsObject();
                         opt.innerHTML = "第" + result['Volumes'] + "章 - 第" + result['Articles'] + "篇 - " + result['Name'];
                         opt.addEventListener('click', function(){
-                            change(0, result['Volumes'], result['Articles']);
+                            change(result['Volumes'], result['Articles']);
                         });
                         select.appendChild(opt);
                     }
@@ -59,17 +61,18 @@ title: 內容
         <div class="col-8">
             <div class="row">
                 <div class="col-6 d-flex justify-content-center">
-                    <button class="btn btn-outline-primary" id="btn_original">原文</button>
+                    <button class="btn btn-outline-primary" id="btn_original" onclick="show(0);">原文</button>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                    <button class="btn btn-outline-primary" id="btn_translated">白話文</button>
+                    <button class="btn btn-outline-primary" id="btn_translated" onclick="show(1);">白話文</button>
                 </div>
             </div>
             <div class="row">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title" id="card_title"></h5>
-                        <p class="card-text" id="card_text"></p>
+                        <p class="card-text" id="card_text_original"></p>
+                        <p class="card-text" id="card_text_translated"></p>
                     </div>
                 </div>
             </div>
