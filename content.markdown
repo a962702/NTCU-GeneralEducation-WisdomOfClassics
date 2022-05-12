@@ -31,6 +31,7 @@ title: 內容
                 document.getElementById('card_title').innerHTML = result['Name'];
                 document.getElementById('card_text_original').innerHTML = result['Original'];
                 document.getElementById('card_text_translated').innerHTML = result['Translated'];
+                show(0);
             }
             function show(type) {
                 if(type == 0) {
