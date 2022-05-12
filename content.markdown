@@ -3,19 +3,68 @@ layout: default
 title: 內容
 ---
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.min.js"
+    integrity="sha512-7bKBIIhC5ktPKnC82Q257bDXW84tc9L5y318qySCidwScxOW1UCgi2aelmWAP3MWAURoKvA+n6G7FZaERDtYIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var db = null;
+    async function init() {
+        const sqlPromise = initSqlJs({
+            locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.wasm`
+        });
+        const dataPromise = fetch("/NTCU-GeneralEducation-WisdomOfClassics/assets/db/database.sqlite").then(res => res.arrayBuffer());
+        const [SQL, buf] = await Promise.all([sqlPromise, dataPromise]);
+        db = new SQL.Database(new Uint8Array(buf));
+    }
+</script>
 <div class="container">
     <div class="row">
-        <div class="col-4"></div>
+        <div class="col-4" id="menu"></div>
+        <script>
+            function change(type, Volumes, Articles){
+                stmt = db.prepare("SELECT * FROM content where `Volumes` = " + Volumes + " and `Articles` = " + Articles + " order by Volumes, Articles");
+                stmt.step();
+                const result = stmt.getAsObject();
+                if(type == 0)
+                    document.getElementById('contentarea').innerHTML = result['Original'];
+                else
+                    document.getElementById('contentarea').innerHTML = result['Translated'];
+                document.getElementById('btn_original').addEventListener('click', function(){
+                    change(0, result['Volumes'], result['Articles']);
+                });
+                document.getElementById('btn_translated').addEventListener('click', function(){
+                    change(1, result['Volumes'], result['Articles']);
+                });
+            }
+            init().then(
+                function (value) {
+                    var select = document.getElementById('menu');
+                    var stmt = db.prepare("SELECT * FROM content order by Volumes, Articles");
+                    while (stmt.step()) {
+                        var opt = document.createElement('p');
+                        const result = stmt.getAsObject();
+                        opt.innerHTML = "第" + result['Volumes'] + "章 - 第" + result['Articles'] + "篇 - " + result['Name'];
+                        opt.addEventListener('click', function(){
+                            change(0, result['Volumes'], result['Articles']);
+                        });
+                        select.appendChild(opt);
+                    }
+                },
+                function (error) {
+                    window.alert("ERROR! Cannot init");
+                }
+            )
+        </script>
         <div class="col-8">
             <div class="row">
                 <div class="col-6 d-flex justify-content-center">
-                    <button class="btn btn-outline-primary">原文</button>
+                    <button class="btn btn-outline-primary" id="btn_original">原文</button>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                    <button class="btn btn-outline-primary">原文</button>
+                    <button class="btn btn-outline-primary" id="btn_translated">白話文</button>
                 </div>
             </div>
-            <div class="row bg-secondary"></div>
+            <div class="row bg-secondary" id="contentarea"></div>
         </div>
     </div>
 </div>
