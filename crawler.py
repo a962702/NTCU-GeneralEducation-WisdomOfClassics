@@ -42,24 +42,61 @@ def main():
     web_url = "https://www.ptt.cc/man/marvel/D7B0/D450/D47A/index.html"
     web_response = getResponse(web_url) # get web_url reply
     volumes = getVolumes(web_response) # get all volume url
-    Results = {}
+    problem_link = []
+    ptn = ["………………………………………………………………………………………………………(?![\\s\\S\\u4e00-\\u9fff]*………………………………………………………………………………………………………)[\\s\\S\\u4e00-\\u9fff]*",
+           "(?<=………………………………………………………………………………………………………)[\\s\\S\\u4e00-\\u9fff]*",
+           "[\\s\\S\\u4e00-\\u9fff]*(?<=--)"]
+    results = ''
     for volumes_ind, volume in enumerate(volumes):
         volume_response = getResponse(volume) # get one volume reply
         articles = getArticles(volume_response) # get all article url of one volume
-        article_ind = 1
-        for article in articles:
+        for articles_ind, article in enumerate(articles):
             article_response = getResponse(article)
-            originals = getOriginals(article_response)
+            original = getOriginals(article_response)
+            txt = original.text
+            legal = True
+            for i in ptn:
+                match = re.search(i,txt,re.MULTILINE)
+                if not match:
+                    problem_link.append(article)
+                    legal = False
+                    break
+                txt = match[0]
+            if legal:
+                results = results + '\n\n' + txt
+                print('Done : ' + article)
+    file_name = "raw.txt"
+    with open(file_name,'w',encoding='UTF-8') as wfile:
+        wfile.write(results)
+    for i in problem_link:
+        print("Not match link : " + i)
     
+
 def test():
     web_url = "https://www.ptt.cc/man/marvel/D7B0/D450/D47A/index.html"
     web_response = getResponse(web_url) # get web_url reply
     volumes = getVolumes(web_response) # get all volume url
-    Results = {}
     volume_response = getResponse(volumes[0])
     articles = getArticles(volume_response)
     article_response = getResponse(articles[0])
     original = getOriginals(article_response)
     txt = original.text
-    print(re.search(u"\n\d{1,2}-\d{1,2}(.*\n.*)*--(?!.*--)",txt,re.MULTILINE))
+    problem_link = []
+    legal = True
+    ptn = ["………………………………………………………………………………………………………(?![\\s\\S\\u4e00-\\u9fff]*………………………………………………………………………………………………………)[\\s\\S\\u4e00-\\u9fff]*",
+           "(?<=………………………………………………………………………………………………………)[\\s\\S\\u4e00-\\u9fff]*",
+           "[\\s\\S\\u4e00-\\u9fff]*(?<=--)"]
+    for i in ptn:
+        match = re.search(i,txt,re.MULTILINE)
+        if not match:
+            problem_link.append(articles[0])
+            legal = False
+            break
+        txt = match[0]
+    # txt = re.search(r"………………………………………………………………………………………………………(?![\s\S\u4e00-\u9fff]*………………………………………………………………………………………………………)[\s\S\u4e00-\u9fff]*",txt,re.MULTILINE)[0]
+    # txt = re.search(r"(?<=………………………………………………………………………………………………………)[\s\S\u4e00-\u9fff]*",txt,re.MULTILINE)[0]
+    # txt = re.search(r"[\s\S\u4e00-\u9fff]*(?<=--)",txt,re.MULTILINE)[0]
+    # print(re.search(u"\n\d{1,2}-\d{1,2}(.*\n.*)*--(?!.*--)",txt,re.MULTILINE))
+    print(txt)
         
+main()
