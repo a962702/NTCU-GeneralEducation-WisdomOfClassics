@@ -97,6 +97,7 @@ title: 內容
 						li.appendChild(ul);
 						select.appendChild(li);
 					}
+					change(0,0);
                 },
                 function (error) {
                     window.alert("ERROR! Cannot init");
