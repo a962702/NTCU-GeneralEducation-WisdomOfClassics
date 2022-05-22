@@ -47,16 +47,56 @@ title: 內容
                 function (value) {
                     var select = document.getElementById('menu');
                     var stmt = db.prepare("SELECT * FROM content order by Volumes, Articles");
+					num = 0;
                     while (stmt.step()) {
-                        var opt = document.createElement('a');
-                        const result = stmt.getAsObject();
-                        opt.classList.add('nav-link');
-                        opt.innerHTML = "第" + result['Volumes'] + "章 - 第" + result['Articles'] + "篇 - " + result['Name'];
-                        opt.addEventListener('click', function(){
+						const result = stmt.getAsObject();
+						console.log(result['Volumes'] + " / " + result['Articles']);
+						if(result['Volumes'] == 0){
+							var1 = document.createElement('li');
+							var1.classList.add('nav-item');
+							var2 = document.createElement('a');
+							var2.classList.add('nav-link');
+							var2.addEventListener('click', function(){
+								change(result['Volumes'], result['Articles']);
+							});
+							var2.innerHTML = "自序";
+							var1.appendChild(var2);
+							select.appendChild(var1);
+							continue;
+						}
+						if(num != result['Volumes']){
+							if(typeof li !== "undefined" && typeof a !== "undefined" && typeof ul !== "undefined"){
+								li.appendChild(a);
+								li.appendChild(ul);
+								select.appendChild(li);
+							}
+							li = document.createElement('li');
+							li.classList.add('nav-item');
+							a = document.createElement('a');
+							a.classList.add('nav-link');
+							a.classList.add('dropdown-toggle');
+							a.setAttribute("data-bs-toggle", "dropdown");
+							a.setAttribute("role", "button");
+							a.innerHTML = "第" + result['Volumes'] + "卷";
+							ul = document.createElement('ul');
+							ul.classList.add('dropdown-menu');
+							num = result['Volumes'];
+						}
+						var1 = document.createElement('li');
+                        var2 = document.createElement('a');
+                        var2.classList.add('dropdown-item');
+                        var2.innerHTML = "第" + result['Articles'] + "篇 - " + result['Name'];
+                        var2.addEventListener('click', function(){
                             change(result['Volumes'], result['Articles']);
                         });
-                        select.appendChild(opt);
+                        var1.appendChild(var2);
+						ul.appendChild(var1);
                     }
+					if(typeof li !== "undefined" && typeof a !== "undefined" && typeof ul !== "undefined"){
+						li.appendChild(a);
+						li.appendChild(ul);
+						select.appendChild(li);
+					}
                 },
                 function (error) {
                     window.alert("ERROR! Cannot init");
