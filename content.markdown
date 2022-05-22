@@ -28,7 +28,7 @@ title: 內容
                 stmt = db.prepare("SELECT * FROM content where `Volumes` = " + Volumes + " and `Articles` = " + Articles + " order by Volumes, Articles");
                 stmt.step();
                 const result = stmt.getAsObject();
-                document.getElementById('card_title').innerHTML = result['Name'];
+                document.getElementById('card_title').innerHTML = "第" + result['Volumes'] + "卷 > " + "第" + result['Articles'] + "篇 " + result['Name'];
                 document.getElementById('card_text_original').innerHTML = result['Original'];
                 document.getElementById('card_text_translated').innerHTML = result['Translated'];
                 show(0);
