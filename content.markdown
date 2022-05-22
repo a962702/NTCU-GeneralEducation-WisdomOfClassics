@@ -37,10 +37,18 @@ title: 內容
                 if(type == 0) {
                     document.getElementById('card_text_original').style.display = "block";
                     document.getElementById('card_text_translated').style.display = "none";
+					document.getElementById("btn_original").classList.remove("btn-outline-primary");
+					document.getElementById("btn_original").classList.add('btn-primary');
+					document.getElementById("btn_translated").classList.remove("btn-primary");
+					document.getElementById("btn_translated").classList.add('btn-outline-primary');
                 }
                 else {
                     document.getElementById('card_text_original').style.display = "none";
                     document.getElementById('card_text_translated').style.display = "block";
+					document.getElementById("btn_original").classList.remove('btn-primary');
+					document.getElementById("btn_original").classList.add('btn-outline-primary');
+					document.getElementById("btn_translated").classList.remove('btn-outline-primary');
+					document.getElementById("btn_translated").classList.add('btn-primary');
                 }
             }
             init().then(
@@ -107,10 +115,10 @@ title: 內容
         <div class="col-8">
             <div class="row">
                 <div class="col-6 d-flex justify-content-center">
-                    <button class="btn btn-outline-primary" id="btn_original" onclick="show(0);">原文</button>
+                    <button class="btn" id="btn_original" onclick="show(0);">原文</button>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                    <button class="btn btn-outline-primary" id="btn_translated" onclick="show(1);">白話文</button>
+                    <button class="btn" id="btn_translated" onclick="show(1);">白話文</button>
                 </div>
             </div>
             <div class="row">
