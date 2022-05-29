@@ -11,7 +11,7 @@ title: 作者生平
 </style>
 
 <div class="container">
-    <img src="./image/Yuan_Mei.png" style="position:absolute;top:80px;left:20px;" width="250" heigh="350" alt="袁枚">
+    <img src="/NTCU-GeneralEducation-WisdomOfClassics/assets/img/Yuan_Mei.png" style="position:absolute;top:80px;left:20px;" width="250" heigh="350" alt="袁枚">
     <h1 style="position:absolute;top:100px;left:300px;">簡介</h1>
     <p style="position:absolute;top:160px;left:300px;color:rgb(51, 0, 255);max-width:1000px;">袁枚（1716年3月25日－1797年1月3日）。字子才，號簡齋，別號隨園老人，時稱隨園先生，浙江錢塘縣（今浙江杭州）人，清代詩人、文學家、散文家、美食家。年廿四中進士，曾官溧水、江浦、沭陽、江寧等地知縣，約三十八歲辭官還鄉，致仕之後因投資地產有道，家財萬貫。官至縣令，追贈二品奉政大夫。
         袁枚擅長詩、賦、制藝，能寫駢文、小品文、筆記，乾隆朝為詩壇盟主，又為<mark>「清代駢文八大家」、「江右三大家」</mark>之一，文筆亦與協辦大學士直隸紀昀齊名，時人稱<mark>「南袁北紀」</mark>。其喜好廣泛，甚至編寫食譜、志怪小說，著有《小倉山房文集》、《隨園詩話》、《子不語》、《祭妹文》等。書信亦有名，其《小倉山房尺牘》與許葭村《秋水軒尺牘》、龔未齋《雪鴻軒尺牘》，人稱「清代三大尺牘」。袁枚生平喜稱人善、獎掖士類，也提倡女性文學，廣收女弟子。不喜理學、漢學，追求自由，反對統一思想，他說「物之不齊，物之情也，天亦不能做主，而況於人乎？」，故被當時的許多文人嚴厲批判，袁枚依然悠哉度日，在文壇享有盛名。
