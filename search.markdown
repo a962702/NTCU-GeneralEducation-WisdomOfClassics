@@ -90,7 +90,7 @@ title: 搜尋
     </div>
 
     <div>
-        <div id="status"></div>
+        <div id="status">請輸入2個字以開始搜尋</div>
         <div class="accordion" id="result"></div>
     </div>
 </div>
