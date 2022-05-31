@@ -6,13 +6,19 @@ title: 子不語
 <div class="container">
     <div>
         <h1 class="text-center">製作網頁動機</h1>
+        <br>
         <p>&ensp;&ensp;&ensp;&ensp;我們設計此網站因為想要使大家能夠容易閱讀子不語且更能夠輕易找到想要的篇章，加上認識作者袁枚。
             因為當我們在找尋網路上資源的時候發現好用而且介面清楚的網站並不多，想要欣賞文學時卻沒辦法輕易找到，所以我們資工系的學生決定嘗試製造出一個好用的網站。選擇閱讀這個主題是因為我們對於怪力亂神有興趣而且以前比較沒有接觸過，想要學習新的東西。網頁設計我們利用Bootstrap
             CSS做美化，網頁的製造跟設計跟抓取資料都是利用資工系的專長。
+            <br>
             <br>&ensp;&ensp;&ensp;&ensp;子不語是孔子絕口不談，關於「怪異、暴力、悖亂、神鬼」等事，《子不語》記述之故事約有一千則，名篇有〈兔兒神〉、〈蔡書生〉、〈李通判〉、〈關神下乩〉、〈成神不必賢人〉、〈窮鬼祟人富鬼不崇人〉等，雖然在那個時代雖然不是非常的傳奇，但是到現代就是了。
             《子不語》，又名《新齊諧》，文言筆記小說，清代袁枚著，共24卷，又有續集10卷。書成於乾隆五十三年（1788年）以前，與紀曉嵐《閱微草堂筆記》一書齊名，兩人也曾在各自的著作中提起對方，有「南袁北紀」之說，而《子不語》與《閱微草堂筆記》也紀錄了許多相同的故事，如〈關神下乩〉、〈鬼怕冷淡〉等。
         </p>
+        <br>
+        <hr>
+        <br>
         <h1 class="text-center">組員介紹及分工</h1>
+        <br>
         <div class="card-group">
             <div class="card">
                 <div class="card-body">
@@ -43,7 +49,11 @@ title: 子不語
                 </div>
             </div>
         </div>
+        <br>
+        <hr>
+        <br>
         <h1 class="text-center">軟體及資料來源</h1>
+        <br>
         <p>
         使用 MIT授權 的 Bootstrap 5.1.3：<a href="https://getbootstrap.com">https://getbootstrap.com</a><br>
         使用 MIT授權 的 Feather icons：<a href="https://feathericons.com">https://feathericons.com</a><br>
