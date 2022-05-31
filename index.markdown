@@ -43,11 +43,19 @@ title: 子不語
                 </div>
             </div>
         </div>
-        <h1 class="text-center">資料來源</h1>
-        <h4 class="text-center"><a href="https://www.ptt.cc/man/marvel/D7B0/D450/D47A/index.html">內容來源</a><br>
-            <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">使用Bootstrap的CSS</a><br>
-            剩下的是使用我們的腦袋
-        </h4>
+        <h1 class="text-center">軟體及資料來源</h1>
+        <p>
+        使用 MIT授權 的 Bootstrap 5.1.3：<a href="https://getbootstrap.com">https://getbootstrap.com</a><br>
+        使用 MIT授權 的 Feather icons：<a href="https://feathericons.com">https://feathericons.com</a><br>
+        使用 DB Browser for SQLite 建立及編輯資料庫：<a href="https://sqlitebrowser.org">https://sqlitebrowser.org</a><br>
+        使用 MIT授權 的 SQL.js：<a href="https://sql.js.org">https://sql.js.org</a><br>
+        使用 GitHub Pages 網頁代管服務：<a href="https://pages.github.com">https://pages.github.com</a><br>
+        本網站原始碼存放於 GitHub：<a href="https://github.com/a962702/NTCU-GeneralEducation-WisdomOfClassics">https://github.com/a962702/NTCU-GeneralEducation-WisdomOfClassics</a><br>
+        </p>
+        <p>
+        子不語原文及翻譯來自PPT：<a href="https://www.ptt.cc/man/marvel/D7B0/D450/D47A/index.html">https://www.ptt.cc/man/marvel/D7B0/D450/D47A/index.html</a><br>
+        特別感謝作者 akoumedi (樂可樂)
+        </p>
     </div>
 </div>
 <i color="blue" data-feather="eye"></i>
