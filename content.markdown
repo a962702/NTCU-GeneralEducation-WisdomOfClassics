@@ -23,6 +23,38 @@ title: 內容
             <nav class="nav flex-column" id="menu">
             </nav>
         </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-6 d-flex justify-content-center">
+                    <button class="btn" id="btn_original" onclick="show(0);">原文</button>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                    <button class="btn" id="btn_translated" onclick="show(1);">白話文</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title placeholder-glow" id="card_title">
+                            <span class="placeholder col-6"></span>
+                        </h5>
+                        <p class="card-text placeholder-glow" id="card_text_original">
+                            <span class="placeholder col-5"></span>
+                            <span class="placeholder col-8"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-2"></span>
+                            <span class="placeholder col-9"></span>
+                            <span class="placeholder col-2"></span>
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-2"></span>
+                            <span class="placeholder col-9"></span>
+                            <span class="placeholder col-6"></span>
+                        </p>
+                        <p class="card-text placeholder-glow" id="card_text_translated"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script>
             function change(Volumes, Articles){
                 stmt = db.prepare("SELECT * FROM content where `Volumes` = " + Volumes + " and `Articles` = " + Articles + " order by Volumes, Articles");
@@ -112,24 +144,5 @@ title: 內容
                 }
             )
         </script>
-        <div class="col-8">
-            <div class="row">
-                <div class="col-6 d-flex justify-content-center">
-                    <button class="btn" id="btn_original" onclick="show(0);">原文</button>
-                </div>
-                <div class="col-6 d-flex justify-content-center">
-                    <button class="btn" id="btn_translated" onclick="show(1);">白話文</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title" id="card_title"></h5>
-                        <p class="card-text" id="card_text_original"></p>
-                        <p class="card-text" id="card_text_translated"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
