@@ -19,21 +19,22 @@ title: 內容
 </script>
 <div class="container">
     <div class="row">
-        <div class="col-4">
+        <div class="col-3 content-list">
             <nav class="nav flex-column" id="menu">
             </nav>
         </div>
-        <div class="col-8">
+        <div class="col-9">
             <div class="row">
                 <div class="col-6 d-flex justify-content-center">
-                    <button class="btn" id="btn_original" onclick="show(0);">原文</button>
+                    <button class="btn content_btn" id="btn_original" onclick="show(0);">原文</button>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                    <button class="btn" id="btn_translated" onclick="show(1);">白話文</button>
+                    <button class="btn content_btn" id="btn_translated" onclick="show(1);">白話文</button>
                 </div>
             </div>
+            <br>
             <div class="row">
-                <div class="card">
+                <div class="card content-content">
                     <div class="card-body">
                         <h5 class="card-title placeholder-glow" id="card_title">
                             <span class="placeholder col-6"></span>
