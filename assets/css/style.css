@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 微軟正黑體, 標楷體, sans-serif;
+    font-size: 18px;
+    background-image: url(/NTCU-GeneralEducation-WisdomOfClassics/assets/img/background_image.jpg);
+    background-color: rgba(255, 255, 255, 0.8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav-item {
+    padding: 0px 10px;
+}
+
+.nav-img {
+    width: 43px;
+}
+
+.page-content {
+    margin-top: 80px;
+}
+
+.content-list {
+    /* overflow: scroll; */
+}
+
+.content-content {
+    /* padding: 0; */
+}
+
+.content_btn {
+    width: 100%;
+}
+
+.footer-top {
+  --offset: 50px; 
+
+  position: fixed;
+  bottom: 20px;      
+  right: 10px;
+  /* margin-right: 10px;  */
+  place-self: flex-end center;
+  margin-top: calc(100vh + var(--offset));
+
+  /* visual styling */
+  width: 45px;
+  aspect-ratio: 1;
+  background: #6e6c6c;
+  border-radius: 10px;
+}
+
+.footer-top:before {
+  content: "";
+  position: absolute;
+  inset: 30%;
+  transform: translateY(20%) rotate(-45deg);
+  border-top: 5px solid #fff;
+  border-right: 5px solid #fff;
+}
