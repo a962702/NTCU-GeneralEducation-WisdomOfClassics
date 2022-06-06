@@ -17,35 +17,54 @@ title: 子不語
         <br>
         <hr>
         <br>
-        <h1 class="text-center">組員介紹及分工</h1>
+        <h1 class="text-center">分工項目</h1>
         <br>
         <div class="card-group">
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title">楊哲嘉</h5>
                 <h6 class="card-subtitle mb-2 text-muted">ACS108107</h6>
-                <p class="card-text">非常厲害的程式設計師，會淡定的完成目標。負責抓取資料且製造網頁，有問題找這位就對了。</p>
+                <p class="card-text">
+                    <ul>
+                        <li>利用 Jekyll 建置及設計網頁</li>
+                        <li>建置子不語全文及譯文資料庫</li>
+                        <li>使用 SQL.js 連結資料庫以製作「內容」、「搜尋」兩頁面</li>
+                    </ul>
+                </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title">楊斌翔</h5>
                 <h6 class="card-subtitle mb-2 text-muted">ACS108128</h6>
-                <p class="card-text">也是挺厲害的程式設計師，跟楊哲嘉齊名雙楊。沒有雙楊連線這個網頁可能無法達到這個地步。</p>
+                <p class="card-text">
+                    <ul>
+                        <li>利用爬蟲技術整理子不語原文及譯文</li>
+                        <li>使用 Bootstrap 以美化整體網頁</li>
+                    </ul>
+                </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title">賴冠銘</h5>
                 <h6 class="card-subtitle mb-2 text-muted">ACS108122</h6>
-                <p class="card-text">非長得非常高，非常非常高。這一次是負責做作者的生平介紹。</p>
+                <p class="card-text">
+                    <ul>
+                        <li>「作者生平」頁面撰寫及設計</li>
+                    </ul>
+                </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title">林碩約</h5>
                 <h6 class="card-subtitle mb-2 text-muted">ACS108111</h6>
-                <p class="card-text">沒甚麼功用但是存在於這個組別。你現在所看的文字就是我寫的。</p>
+                <p class="card-text">
+                    <ul>
+                        <li>「子不語」頁面撰寫及設計</li>
+                    </ul>
+                </p>
                 </div>
             </div>
         </div>
