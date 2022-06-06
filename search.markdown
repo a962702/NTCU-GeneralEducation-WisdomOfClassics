@@ -27,7 +27,10 @@ title: 搜尋
             document.getElementById("status").innerHTML = "請輸入2個字以開始搜尋";
         }
         else {
-            stmt = db.prepare("SELECT * FROM content where `Original` LIKE '%" + search_text + "%'");
+            from_name = document.getElementById('search-from_name').checked;
+            from_original = document.getElementById('search-from_original').checked;
+            from_translated = document.getElementById('search-from_translated').checked;
+            stmt = db.prepare("SELECT * FROM content where " + from_name + " and `Name` LIKE '%" + search_text + "%' or " + from_original + " and `Original` LIKE '%" + search_text + "%' or " + from_translated + " and `Translated` LIKE '%" + search_text + "%'");
             count = 0;
             while (stmt.step()) {
                 count += 1;
@@ -104,6 +107,19 @@ title: 搜尋
             </script>
         </span>
         <input type="text" class="form-control" id="search_text" oninput="search()">
+    </div>
+    <label class="col-form-label">搜尋範圍</label>
+    <div class="form-check form-check-inline form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="search-from_name" onchange="search()" checked>
+        <label class="form-check-label" for="search-from_name">名稱</label>
+    </div>
+    <div class="form-check form-check-inline form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="search-from_original" onchange="search()" checked>
+        <label class="form-check-label" for="search-from_original">原文</label>
+    </div>
+    <div class="form-check form-check-inline form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="search-from_translated" onchange="search()">
+        <label class="form-check-label" for="search-from_-translated">譯文</label>
     </div>
 
     <div>
