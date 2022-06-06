@@ -52,6 +52,41 @@ title: 子不語
         <br>
         <hr>
         <br>
+        <h1 class="text-center">閱讀心得</h1>
+        <br>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">楊哲嘉</h5>
+                <h6 class="card-subtitle mb-2 text-muted">ACS108107</h6>
+                <p class="card-text"></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">楊斌翔</h5>
+                <h6 class="card-subtitle mb-2 text-muted">ACS108128</h6>
+                <p class="card-text"></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">賴冠銘</h5>
+                <h6 class="card-subtitle mb-2 text-muted">ACS108122</h6>
+                <p class="card-text"></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">林碩約</h5>
+                <h6 class="card-subtitle mb-2 text-muted">ACS108111</h6>
+                <p class="card-text">一開始學期出在選題目的時候就考慮了許久要做的題目是什麼，想要找自己有興趣讀得下去，這樣才不會感覺是做作業。我們共同選擇了子不語，想說是個單純的怪力亂神，應該會挺好玩得，但是閱讀完後發現他是用怪神怪鬼來隱晦或直白的方式介紹深刻的道理。像是在第七卷第17篇的&lt;狐祖師&gt;當中，用非常簡單的方式給予讀者深刻的感觸，沒有修飾就直述出道理。但是又一些篇章用比較隱晦的方式來講道理，我第一次看的時候感覺沒看懂，上網找到其他人解釋後才看懂。有一些，像是&lt;偷履&gt;，&lt;千年仙鶴>等，則是非常有趣歡樂的小故事。因為本人是理組，且小時候在國外，所以國文跟文言文都不太好，但是這些文言文我看的也挺有心得，還可以接受的地步，了解他想表達甚麼。我讀完後印象最深刻的一篇是&lt;平陽令&gt;，因為話題慘烈又變態，朱鑠自己不信有鬧鬼，自己還拿著劍住在屋內，將妻兒放在隔壁屋，最後被鬼障眼，殺害了無辜的妻兒老小。實在是非常的傷心，但是他自己不相信人家說的話，而且他的個性很差，人品極差，對女性不尊重，看了之後我是覺得妻兒可憐，但是朱鑠應得的。我在閱讀子不語時有如讀故事一般，不像是在讀文學的感覺，而且文章也都不長，簡潔而有力，人物的刻畫也都很細緻，時間一下就過去了，在閱讀時各種心情都表現出來了，有時開心有時傷心有時憤怒。</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
         <h1 class="text-center">軟體及資料來源</h1>
         <br>
         <p>
