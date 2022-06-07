@@ -106,7 +106,7 @@ title: 搜尋
                 feather.replace()
             </script>
         </span>
-        <input type="text" class="form-control" id="search_text" oninput="search()">
+        <input type="text" class="form-control" id="search_text" oninput="search()" placeholder="輸入關鍵字開始搜尋 (EX. 飲酒)">
     </div>
     <label class="col-form-label">搜尋範圍</label>
     <div class="form-check form-check-inline form-switch">
